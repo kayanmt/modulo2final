@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, Arial;
+    scroll-behavior: smooth;
+}
+
+nav{
+    background-color: #dc092c;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li{
+    padding: 0.6rem;
+}
+
+nav h1{
+    color: aliceblue;
+    font-size: 1.4rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1.2rem;
+
+}
+nav img{
+    width: 3rem;
+}
+
+
+header{
+    width: 100%;
+}
+
+main{
+    margin: 0 10rem 0 10rem;
+}
+section#card{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 5rem 0 5rem 0;
+}
+
+section#card h2{
+    width: 100%;
+    text-align: center;
+}
+
+section#card div.card{
+    width: 20rem;
+    box-shadow: 5px 5px 5px 5px #00000015;
+    padding: 1rem;
+    margin-top: 4rem;
+}
+section#card div.card a#editar{
+    padding: .6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: white;
+    border: solid 1px blue;
+    color: blue;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+section#card div.card a#editar:hover{
+    background-color: blue;
+    color: #fff;
+}
+
+section#card div.card a#apagar{
+    padding: .6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: white;
+    border: solid 1px black;
+    color: black;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+section#card div.card a#apagar:hover{
+    background-color: black;
+    color: #fff;
+}
+
+section#card div.card a#detalhe{
+    padding: .6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: white;
+    border: solid 1px #dc092c;
+    color: #dc092c;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+section#card div.card a#detalhe:hover{
+    background-color: #dc092c;
+    color: #fff;
+}
+
+section#card div.card img{
+    width: 100%;
+}
+
+section#card div.card h3{
+    margin-bottom: 1rem;
+}
+section#card div.card p{
+    margin-bottom: 1rem;
+}
+
+section#cadastro{
+    display: flex;
+    justify-content: center;    
+    padding: 5rem;
+}
+
+section#cadastro img{
+    width: 30%;
+}
+section#cadastro h2{
+    width: 50%;
+    text-align: center;
+
+    padding-bottom: 5rem;
+}
+
+section#cadastro form{
+    width: 50%;
+}
+
+section#cadastro form input{
+    width: 100%;
+    padding: .7rem;
+    font-size: 1rem;
+    outline: none;
+    border: solid 2px rgb(196, 196, 196);
+    margin: 0 1rem 1rem 1rem;
+}
+
+section#cadastro form label{
+margin: 1rem;
+color: rgb(80, 80, 80);
+}
+
+section#cadastro form button{
+padding: .6rem;
+width: 25%;
+display: flex;
+justify-content: center;
+margin: 0 auto;
+font-size: 1rem;
+background-color: white;
+border: solid 1px red;
+color: red;
+cursor: pointer;
+transition: all .3s ease-in-out;
+}
+section#cadastro form button:hover{
+    background-color: red;
+    color: #fff;
+}
+
+footer{
+    width: 100%;
+    background-color: #dc092c;
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+}
+footer p{
+    
+    margin: 0 2rem 0 2rem;
+}
+footer a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #000;
+}
+
+@media only screen and (max-width: 900px){
+
+header{
+    display: none;
+    visibility: hidden;
+}
+
+}
+@media only screen and (min-width: 900px) and (max-width: 1500px){
+
+    header{
+       width: 90%;
+    }
+    
+    }
