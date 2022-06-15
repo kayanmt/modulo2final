@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>filmes</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <ul>
             <li><img src="/img/filmescomcoracao.png" alt=""></li>
             <li><a href="/"><h1>FILMES</h1></a></li>
-            <li><a href="#cadastro">Cadastro</a></li>
+            <li><a href="/cadastro">Cadastro</a></li>
             <li><a href="#card">filmes</a></li>
         </ul>
     </nav>
@@ -21,47 +21,7 @@
     <header><img src="/img/bannerfilme.png" alt="banner"></header>
 
     <main>
-        <section id="cadastro">
-
-            <img src="/img/treco.png" alt="filmes">
-             <div>
-
-                <% if (filme==undefined) { %>
-                    <h2>Cadastre um novo filme</h2>
-        
-                    <form action="/add" method="POST">
-        
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
-        
-                        <label for="imagem">Link da imagem:</label>
-                        <input type="text" id="imagem" name="imagem" required>
-        
-                        <label for="tipo">Tipo:</label>
-                        <input type="text" id="tipo" name="tipo" required>
-        
-                        <button id="btnCadastrar" type="submit">Cadastrar</button>
-        
-                    </form>
-                    <%}  else {%>
-        
-                        <h2>Atualize os dados do filme</h2>
-                    <form action="/update/<%= filme.numero %>" method="POST">
-        
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" value="<%= filme.nome%>" required>
-        
-                        <label for="imagem">Link da imagem:</label>
-                        <input type="text" id="imagem" name="imagem" value="<%= filme.imagem%>" required>
-        
-                        <label for="tipo">Tipo:</label>
-                        <input type="text" id="tipo" name="tipo" value="<%= filme.tipo%>" required>
-        
-                        <button id="btnAtualizar" type="submit">Atualizar</button>
-                
-                        </form>
-                        <%}%>
-                </section>
+       
 
                 <section id="card">
         
@@ -71,8 +31,9 @@
                         <img src="<%= filme.imagem %>" alt="">
                         <h3> <%= filme.nome%></h3>
                         <p><%= filme.tipo%></p>
-                        <a id="editar"href="/detalhes/<%= filme.numero%>">Editar</a>
-                        <a id="apagar"href="/delete/<%= filme.numero%>">Apagar</a>
+                        <p><%= filme.descricao%></p>
+                        <a id="editar"href="/getById/<%= filme.id %>/put">Editar</a>
+                        <a id="apagar"href="/getById/<%= filme.id %>/delete">Apagar</a>
                         </div>
                     <%  })  %>
                 </section>
@@ -87,6 +48,56 @@
   
     </main>
     
+    <section>
+        <%if(filmePut !=null){%>
+        <div class="modal" id="modal">
+            
+            <div class="modal header">
+                <h3>Atualizar Pokemon</h3>
+                <a href="/" id="close-modal-put"></a>
+            </div>
+            <div class="modal-body">
+                <form class="form-modal" action="/update/<%= filmePut.id %>" method="POST">
+    
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value="<%= filmePut.nome %>" required>
+    
+                    <label for="imagem">Link da imagem:</label>
+                    <input type="text" id="imagem" name="imagem" value="<%= filmePut.imagem %>" required>
+    
+                    <label for="tipo">Tipo:</label>
+                    <input type="text" id="tipo" name="tipo" value="<%= filmePut.tipo %>" required>
+    
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" id="descricao" name="descricao" value="<%= filmePut.decricao %>" required>
+
+                    <button id="btnCadastrar" type="submit">Atualizar</button>
+                </form>
+            </div>
+
+        </div>
+        <%}%>
+
+    </section>
+    <section> <%if(filmeDel !=null){%>
+        <div class="modal" id="modal">
+            
+            <div class="modal header">
+                <h3>Remover Pokemon</h3>
+                <a href="/" id="close-modal-put"></a>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que quer remover o <%filmeDel.nome%></p>
+                <div id="btns-del">
+                    <a href="/" id="no">Não</a>
+                    <a href="/remove/<%filmeDel.id%>" id="yes">Sim</a>
+                </div>
+            </div>
+
+        </div>
+            <%}%>
+    </section>
+
     <footer>
         <p>Todos os direitos reservados para KayCode</p>
         <p>Dados retirados de <a href="https://www.adorocinema.com/">filmes</a></p>

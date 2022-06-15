@@ -202,6 +202,133 @@ footer a{
     color: #000;
 }
 
+.modal.overlay{
+    background-color: #000050;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.modal{
+    margin: 1rem;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modal-header{
+display: flex;
+justify-content: space-between;
+background-color: #dc092c;
+padding: 1rem;
+color: white;
+
+}
+
+.modal-header a#close-modal-put{
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+}
+.modal-body{
+    padding: .5rem 1rem;
+    flex: 1;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.form-modal{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-modal input{
+    width: 100%;
+    padding: 5rem;
+    font-size: .8rem;
+    outline: none;
+    border: soolid 2px #ccc;
+}
+
+.form-modal label{
+    color: rgb(112,112,112);
+    padding-top: .5rem;
+}
+
+.form-modal button{
+    padding: .6rem;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px #40af00;
+    color: #40af00;
+    cursor:pointer;
+    transition:all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.form-modal button:hover{
+    background-color: #40af00;
+    color: #fff;
+}
+
+.modal-body p{
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+div#btns-del{
+    display: flex;
+    margin: 0 auto;
+}
+
+div#btns-del a{
+    padding: .7rem;
+    text-decoration: none;
+    width: 100%;
+    margin: 2rem 1rem 1rem;
+}
+
+div#btns-del a#no{
+    color: red;
+    border: solid 1px red;
+    transition: all 0.3s ease-in-out;
+}
+
+div#btns-del a#no:hover{
+    color: #dc0a2d;
+    background-color: #dc0a2d;
+}
+
+div#btns-del a#yes{
+    color: green;
+    border: solid 1px green;
+    transition: all 0.3s ease-in-out;
+}
+
+div#btns-del a#yes:hover{
+    color: green;
+    background-color: green;
+}
+
 @media only screen and (max-width: 900px){
 
 header{
