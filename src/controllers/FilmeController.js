@@ -1,5 +1,4 @@
 const filme = require('../models/filme');
-const filme =require('../models/filme');
 
 const getAll = async (req, res)=>{
 try{
