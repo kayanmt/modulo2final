@@ -3,7 +3,7 @@ const filme =require('../models/filme');
 
 const getAll = async (req, res)=>{
 try{
-    const filmes = await filme.findAll();
+    const filmes = await filme.findAll({order: ["id", "ASC"]});
     res.render("index", {filmes, filmePut:null,filmeDel:null});
 }catch(err){
     res.status(500).send({err: err.message});
@@ -33,7 +33,7 @@ res.redirect("/");
 const getById=async(req,res)=>{
     try{
 const method=req.params.method;
-const filmes = await filme.findAll();
+const filmes = await filme.findAll({order: ["id", "ASC"]});
 const filme=await filme.findByPk(req.params.id);
 
 if(method=='put'){
